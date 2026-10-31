@@ -1,0 +1,21 @@
+{
+  "name": "pixelforge",
+  "version": "1.0.0",
+  "description": "PixelForge - independent desktop image editor",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "studio.pixelforge.editor",
+    "productName": "PixelForge",
+    "files": ["main.js", "preload.js", "src/**/*", "package.json"],
+    "win": { "target": "nsis", "artifactName": "PixelForge-Setup-${version}.${ext}" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true }
+  }
+}
